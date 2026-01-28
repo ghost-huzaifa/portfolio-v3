@@ -189,12 +189,14 @@ section {
   max-width: 800px;
   margin: 0 auto;
   gap: 2rem;
+  margin-left: 100px; /* Space for years */
 }
 .tabs-list {
   display: flex;
   flex-direction: column;
   width: 150px;
   border-left: 2px solid var(--card-border);
+  overflow: visible; /* Allow years to show outside */
 }
 .tab-btn {
   background: none;
@@ -207,6 +209,8 @@ section {
   transition: all 0.2s;
   border-left: 2px solid transparent;
   margin-left: -2px;
+  position: relative; /* Anchor for absolute year */
+  overflow: visible;
 }
 .tab-btn:hover,
 .tab-btn.active {
@@ -215,6 +219,19 @@ section {
 }
 .tab-btn.active {
   border-left-color: var(--accent-color);
+}
+
+.tab-year {
+  position: absolute;
+  right: 100%;
+  top: 1rem; /* Align with text */
+  padding-right: 1.5rem;
+  font-family: "Space Grotesk", monospace;
+  color: #8892b0;
+  font-size: 0.85rem;
+}
+.tab-btn.active .tab-year {
+  color: var(--accent-color);
 }
 .tab-panel {
   display: none;
