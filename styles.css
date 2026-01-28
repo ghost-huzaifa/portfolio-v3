@@ -128,9 +128,9 @@ section {
   margin-bottom: 2rem;
 }
 .hero-desc {
-  max-width: 540px;
+  max-width: 620px;
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 3rem;
 }
 .cta-btn {
