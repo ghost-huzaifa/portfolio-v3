@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const dots = Array.from(dotsNav.children);
 
     const slideWidth = slides[0].getBoundingClientRect().width;
-
-    // Arrange slides next to each other
     const setSlidePosition = (slide, index) => {
       slide.style.left = slideWidth * index + "px";
     };
@@ -44,40 +42,33 @@ document.addEventListener("DOMContentLoaded", () => {
       targetDot.classList.add("active");
     };
 
-    // Next Button
     nextButton.addEventListener("click", (e) => {
       const currentSlide = track.querySelector(".current-slide");
-      const nextSlide = currentSlide.nextElementSibling || slides[0]; // Loop back to start
+      const nextSlide = currentSlide.nextElementSibling || slides[0];
       const currentDot = dotsNav.querySelector(".active");
       const nextDot = currentDot.nextElementSibling || dots[0];
-
       moveToSlide(track, currentSlide, nextSlide);
       updateDots(currentDot, nextDot);
     });
 
-    // Prev Button
     prevButton.addEventListener("click", (e) => {
       const currentSlide = track.querySelector(".current-slide");
       const prevSlide =
-        currentSlide.previousElementSibling || slides[slides.length - 1]; // Loop to end
+        currentSlide.previousElementSibling || slides[slides.length - 1];
       const currentDot = dotsNav.querySelector(".active");
       const prevDot =
         currentDot.previousElementSibling || dots[dots.length - 1];
-
       moveToSlide(track, currentSlide, prevSlide);
       updateDots(currentDot, prevDot);
     });
 
-    // Dot Nav
     dotsNav.addEventListener("click", (e) => {
       const targetDot = e.target.closest("button");
       if (!targetDot) return;
-
       const currentSlide = track.querySelector(".current-slide");
       const currentDot = dotsNav.querySelector(".active");
       const targetIndex = dots.findIndex((dot) => dot === targetDot);
       const targetSlide = slides[targetIndex];
-
       moveToSlide(track, currentSlide, targetSlide);
       updateDots(currentDot, targetDot);
     });
@@ -96,12 +87,37 @@ document.addEventListener("DOMContentLoaded", () => {
         current = section.getAttribute("id");
       }
     });
-
     navLinks.forEach((li) => {
       li.classList.remove("active");
       if (li.getAttribute("href").includes(current)) {
         li.classList.add("active");
       }
     });
+  });
+
+  // --- Animations & Scroll Reveal ---
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  // --- Parallax Effect ---
+  const hero = document.querySelector(".hero");
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth > 768) {
+      const scrolled = window.pageYOffset;
+      if (scrolled < 800 && hero) {
+        hero.style.transform = `translateY(${scrolled * 0.2}px)`;
+        hero.style.opacity = 1 - scrolled / 700;
+      }
+    }
   });
 });
