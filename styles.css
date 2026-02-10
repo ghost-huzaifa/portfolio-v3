@@ -194,7 +194,7 @@ section {
 .tabs-list {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  min-width: 200px;
   border-left: 2px solid var(--card-border);
   overflow: visible; /* Allow years to show outside */
 }
@@ -260,7 +260,13 @@ section {
 .job-duration {
   font-size: 0.9rem;
   color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+.job-location {
+  font-size: 0.85rem;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
+  opacity: 0.7;
 }
 .job-desc li {
   position: relative;
