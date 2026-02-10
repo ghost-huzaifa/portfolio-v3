@@ -449,6 +449,18 @@ section {
   padding: 1.5rem;
   border-left: 3px solid var(--accent-color);
 }
+.research-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  transition: transform 0.2s;
+}
+.research-link:hover {
+  transform: translateX(3px);
+}
 
 /* Footer */
 .footer {
