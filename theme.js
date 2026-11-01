@@ -11,7 +11,7 @@
   function applyTheme(value) {
     root.dataset.theme = value;
     document.querySelector('meta[name="theme-color"]').content =
-      value === "dark" ? "#1a1a1a" : "#fbfaf5";
+      value === "dark" ? "#1a1a1a" : "#ffffff";
     document
       .getElementById("theme-toggle")
       ?.setAttribute("aria-pressed", String(value === "dark"));

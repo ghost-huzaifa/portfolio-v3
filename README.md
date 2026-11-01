@@ -4,7 +4,7 @@ A static personal portfolio with a bright white and gold theme, a local portrait
 
 ## Themes
 
-The default theme uses warm white surfaces, dark text, and a darker gold accent for readable links. The “Dark mode” button switches to the original charcoal and gold palette and remembers the visitor's choice in their browser. The saved theme is applied before the page styles load to avoid a flash of the wrong theme.
+The default theme uses clean white surfaces, dark ink text, a full-color portrait, and vivid yellow-gold details. Text links use a darker amber for readability. The “Dark mode” button switches to the original charcoal and gold palette and remembers the visitor's choice in their browser. The saved theme is applied before the page styles load to avoid a flash of the wrong theme.
 
 If JavaScript or browser storage is unavailable, all portfolio content and navigation still work. Without JavaScript, the page stays bright and the theme switch stays hidden. If only storage is blocked, the switch works for the current page.
 

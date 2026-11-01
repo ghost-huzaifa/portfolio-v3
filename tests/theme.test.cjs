@@ -5,7 +5,7 @@ const { runInNewContext } = require("node:vm");
 
 function loadTheme(savedTheme, storageBlocked = false) {
   const root = { dataset: {} };
-  const meta = { content: "#fbfaf5" };
+  const meta = { content: "#ffffff" };
   const attributes = {};
   let ready = false;
   let onReady;
@@ -79,7 +79,7 @@ test("switches both ways, updates accessibility state, and saves the choice", ()
   assert.equal(page.attributes["aria-pressed"], "true");
   page.click();
   assert.equal(page.root.dataset.theme, "light");
-  assert.equal(page.meta.content, "#fbfaf5");
+  assert.equal(page.meta.content, "#ffffff");
   assert.equal(page.attributes["aria-pressed"], "false");
   assert.deepEqual(page.writes, [
     ["portfolio-theme", "dark"],

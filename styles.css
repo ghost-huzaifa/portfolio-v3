@@ -19,25 +19,33 @@ html {
   color: #191913;
 }
 :root {
-  --bg: #fbfaf5;
-  --panel: #ffffff;
-  --gold: #826500;
-  --text: #25251f;
-  --muted: #67675e;
-  --line: #dedcd1;
-  --button-bg: #f4d03f;
+  --bg: #ffffff;
+  --panel: #fffdf5;
+  --gold: #8a5b00;
+  --text: #17202b;
+  --muted: #526070;
+  --line: #e1e6eb;
+  --button-bg: #ffd336;
   --button-text: #191913;
-  --link-border: #b8b09c;
-  --art-bg: #f1efdf;
-  --art-dot: #d3cbae;
-  --pipeline-bg: #fbfaf5;
-  --pipeline-border: #beb389;
-  --art-muted: #686343;
-  --tag-text: #5f5c4a;
-  --tag-border: #d7d1bc;
-  --film-bg: #f1eedf;
-  --film-border: #c8be9b;
-  --film-text: #776326;
+  --button-shadow: 4px 4px 0 #17202b;
+  --link-border: #a9b2bd;
+  --art-bg: #fff2b8;
+  --art-dot: #dac159;
+  --pipeline-bg: #ffffff;
+  --pipeline-border: #d0ad33;
+  --art-muted: #6c5100;
+  --tag-text: #494c54;
+  --tag-border: #e1d5a5;
+  --film-bg: #fff6d3;
+  --film-border: #e0bc40;
+  --film-text: #725400;
+  --graphic-gold: #e9b523;
+  --frame-fill: #ffd336;
+  --frame-inset: 16px 0 30px 16px;
+  --photo-filter: none;
+  --heading-weight: 600;
+  --intro-color: #17202b;
+  --intro-wash: #ffe889;
   --anchor-offset: 110px;
   background: var(--bg);
   color: var(--text);
@@ -54,6 +62,8 @@ html {
   --text: #f5f3ec;
   --muted: #b0afa7;
   --line: #3b3a33;
+  --button-bg: #f4d03f;
+  --button-shadow: none;
   --link-border: #676354;
   --art-bg: #23231f;
   --art-dot: #484536;
@@ -65,6 +75,13 @@ html {
   --film-bg: #25251f;
   --film-border: #504a31;
   --film-text: #c3b983;
+  --graphic-gold: #f4d03f;
+  --frame-fill: transparent;
+  --frame-inset: 15px 0 0 15px;
+  --photo-filter: grayscale(1);
+  --heading-weight: 500;
+  --intro-color: #f4d03f;
+  --intro-wash: transparent;
   color-scheme: dark;
 }
 * {
@@ -173,11 +190,11 @@ button:focus-visible {
   content: "";
   width: 20px;
   height: 1px;
-  background: var(--gold);
+  background: var(--graphic-gold);
 }
 h1 {
   font:
-    500 clamp(42px, 6.4vw, 74px)/1.02 "Space Grotesk",
+    var(--heading-weight) clamp(42px, 6.4vw, 74px)/1.02 "Space Grotesk",
     sans-serif;
   letter-spacing: -3.5px;
   margin: 26px 0 20px;
@@ -188,6 +205,10 @@ h1 {
     sans-serif;
   letter-spacing: -0.4px;
   margin-bottom: 19px;
+}
+.intro .gold {
+  color: var(--intro-color);
+  box-shadow: inset 0 -0.4em 0 var(--intro-wash);
 }
 .bio {
   color: var(--muted);
@@ -212,6 +233,7 @@ h1 {
   font-size: 12px;
   font-weight: 600;
   border-radius: 3px;
+  box-shadow: var(--button-shadow);
 }
 .primary:hover {
   color: var(--button-text);
@@ -230,8 +252,10 @@ h1 {
 .portrait:after {
   content: "";
   position: absolute;
-  inset: 15px 0 0 15px;
-  border: 1px solid var(--gold);
+  inset: var(--frame-inset);
+  border: 1px solid var(--graphic-gold);
+  background: var(--frame-fill);
+  z-index: 0;
   pointer-events: none;
 }
 .photo {
@@ -242,7 +266,7 @@ h1 {
   height: 345px;
   object-fit: cover;
   object-position: 50% 32%;
-  filter: grayscale(1);
+  filter: var(--photo-filter);
   border-radius: 2px;
 }
 .photo-label {
