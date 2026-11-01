@@ -1,6 +1,12 @@
 # Muhammad Huzaifa's Portfolio
 
-A static personal portfolio with a charcoal and gold theme, a local portrait, projects, research, experience, and creative interests. Built with HTML and CSS; no build step or JavaScript is required.
+A static personal portfolio with a bright white and gold theme, a local portrait, projects, research, experience, and creative interests. Built with HTML and CSS; no build step is required. A small optional script adds the theme switch.
+
+## Themes
+
+The default theme uses warm white surfaces, dark text, and a darker gold accent for readable links. The “Dark mode” button switches to the original charcoal and gold palette and remembers the visitor's choice in their browser. The saved theme is applied before the page styles load to avoid a flash of the wrong theme.
+
+If JavaScript or browser storage is unavailable, all portfolio content and navigation still work. Without JavaScript, the page stays bright and the theme switch stays hidden. If only storage is blocked, the switch works for the current page.
 
 ## Preview locally
 
@@ -27,3 +33,9 @@ The page currently uses GitHub as its public contact route. Add an email or anot
 ## Checks
 
 Check the page at desktop and phone widths, verify that all menu links reach the right sections, and navigate by keyboard. Content and links must remain usable with JavaScript disabled. Respect the visitor's reduced-motion preference.
+
+Run the theme behavior checks with Node.js:
+
+```sh
+node --test tests/theme.test.cjs
+```

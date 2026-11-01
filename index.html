@@ -8,8 +8,8 @@
       name="description"
       content="Muhammad Huzaifa is a PIEAS computer science graduate and software engineer in Islamabad. Explore his AI projects, research, experience, and creative interests."
     />
-    <meta name="theme-color" content="#1a1a1a" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#fbfaf5" />
+    <meta name="color-scheme" content="light dark" />
     <meta
       property="og:title"
       content="Muhammad Huzaifa | Software, AI &amp; Research"
@@ -25,13 +25,25 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="theme.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="wrap">
       <header class="header">
-        <a href="#about" class="logo">Huzaifa<span class="gold">.</span></a>
+        <div class="identity">
+          <a href="#about" class="logo">Huzaifa<span class="gold">.</span></a>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-pressed="false"
+            hidden
+          >
+            Dark mode
+          </button>
+        </div>
         <nav class="menu" aria-label="Portfolio navigation">
           <a href="#projects">Projects</a><a href="#research">Research</a
           ><a href="#experience">Experience</a><a href="#interests">Interests</a

@@ -19,20 +19,53 @@ html {
   color: #191913;
 }
 :root {
-  --bg: #1a1a1a;
-  --panel: #212120;
-  --gold: #f4d03f;
-  --text: #f5f3ec;
-  --muted: #b0afa7;
-  --line: #3b3a33;
+  --bg: #fbfaf5;
+  --panel: #ffffff;
+  --gold: #826500;
+  --text: #25251f;
+  --muted: #67675e;
+  --line: #dedcd1;
+  --button-bg: #f4d03f;
+  --button-text: #191913;
+  --link-border: #b8b09c;
+  --art-bg: #f1efdf;
+  --art-dot: #d3cbae;
+  --pipeline-bg: #fbfaf5;
+  --pipeline-border: #beb389;
+  --art-muted: #686343;
+  --tag-text: #5f5c4a;
+  --tag-border: #d7d1bc;
+  --film-bg: #f1eedf;
+  --film-border: #c8be9b;
+  --film-text: #776326;
   --anchor-offset: 110px;
   background: var(--bg);
   color: var(--text);
   font:
     14px/1.65 "Inter",
     sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
   overflow-wrap: anywhere;
+}
+:root[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --panel: #212120;
+  --gold: #f4d03f;
+  --text: #f5f3ec;
+  --muted: #b0afa7;
+  --line: #3b3a33;
+  --link-border: #676354;
+  --art-bg: #23231f;
+  --art-dot: #484536;
+  --pipeline-bg: #282821;
+  --pipeline-border: #615a39;
+  --art-muted: #bdb89e;
+  --tag-text: #d0cdbd;
+  --tag-border: #4a473c;
+  --film-bg: #25251f;
+  --film-border: #504a31;
+  --film-text: #c3b983;
+  color-scheme: dark;
 }
 * {
   box-sizing: border-box;
@@ -50,7 +83,8 @@ a {
 a:hover {
   color: var(--gold);
 }
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 5px;
 }
@@ -77,6 +111,32 @@ a:focus-visible {
     sans-serif;
   letter-spacing: -1px;
   white-space: nowrap;
+}
+.identity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.theme-toggle {
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel);
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.theme-toggle[hidden] {
+  display: none;
+}
+.theme-toggle:hover,
+.theme-toggle[aria-pressed="true"] {
+  color: var(--gold);
+  border-color: var(--gold);
 }
 .gold {
   color: var(--gold);
@@ -146,20 +206,20 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 18px;
-  background: var(--gold);
-  color: #191913;
+  background: var(--button-bg);
+  color: var(--button-text);
   padding: 11px 19px;
   font-size: 12px;
   font-weight: 600;
   border-radius: 3px;
 }
 .primary:hover {
-  color: #191913;
+  color: var(--button-text);
   filter: brightness(1.07);
 }
 .text-link {
   font-size: 12px;
-  border-bottom: 1px solid #676354;
+  border-bottom: 1px solid var(--link-border);
   padding-bottom: 3px;
 }
 .portrait {
@@ -265,8 +325,8 @@ h3 {
   flex-direction: column;
   justify-content: center;
   padding: 30px;
-  background-color: #23231f;
-  background-image: radial-gradient(#484536 1px, transparent 1px);
+  background-color: var(--art-bg);
+  background-image: radial-gradient(var(--art-dot) 1px, transparent 1px);
   background-size: 14px 14px;
   border-right: 1px solid var(--line);
 }
@@ -288,8 +348,8 @@ h3 {
   gap: 6px;
 }
 .pipeline span {
-  background: #282821;
-  border: 1px solid #615a39;
+  background: var(--pipeline-bg);
+  border: 1px solid var(--pipeline-border);
   border-radius: 3px;
   min-width: 0;
   padding: 8px;
@@ -305,7 +365,7 @@ h3 {
 .art-foot {
   margin-top: 17px;
   font: 10px monospace;
-  color: #bdb89e;
+  color: var(--art-muted);
   letter-spacing: 0.5px;
 }
 .project-copy {
@@ -335,9 +395,9 @@ h3 {
 }
 .tags span {
   font-size: 11px;
-  color: #d0cdbd;
+  color: var(--tag-text);
   padding: 3px 8px;
-  border: 1px solid #4a473c;
+  border: 1px solid var(--tag-border);
   border-radius: 3px;
 }
 .project-link {
@@ -415,12 +475,12 @@ h3 {
   aspect-ratio: 16/9;
   min-height: 155px;
   position: relative;
-  border: 1px solid #504a31;
-  background: #25251f;
+  border: 1px solid var(--film-border);
+  background: var(--film-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c3b983;
+  color: var(--film-text);
 }
 .film:before,
 .film:after {
@@ -520,6 +580,9 @@ h3 {
     gap: 10px;
     padding-top: 22px;
     padding-bottom: 18px;
+  }
+  .identity {
+    width: 100%;
   }
   .menu {
     gap: 19px;
@@ -639,6 +702,7 @@ h3 {
     justify-content: center;
   }
   .menu a,
+  .theme-toggle,
   .text-link,
   .project-link,
   .paper a,
