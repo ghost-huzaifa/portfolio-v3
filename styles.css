@@ -11,41 +11,41 @@ html {
   top: -100px;
   z-index: 20;
   padding: 12px 18px;
-  background: #f4d03f;
-  color: #191913;
+  background: var(--button-bg);
+  color: var(--button-text);
 }
 .skip-link:focus {
   top: 12px;
-  color: #191913;
+  color: var(--button-text);
 }
 :root {
   --bg: #ffffff;
-  --panel: #fffdf5;
-  --gold: #8a5b00;
-  --text: #17202b;
-  --muted: #526070;
-  --line: #e1e6eb;
-  --button-bg: #ffd336;
-  --button-text: #191913;
-  --button-shadow: 4px 4px 0 #17202b;
-  --link-border: #a9b2bd;
-  --art-bg: #fff2b8;
-  --art-dot: #dac159;
+  --panel: #fffaf1;
+  --gold: #91581e;
+  --text: #252322;
+  --muted: #625c57;
+  --line: #e8e0d7;
+  --button-bg: #e8ad59;
+  --button-text: #211d18;
+  --button-shadow: 4px 4px 0 #252322;
+  --link-border: #b4a493;
+  --art-bg: #f6e1bf;
+  --art-dot: #d7af71;
   --pipeline-bg: #ffffff;
-  --pipeline-border: #d0ad33;
-  --art-muted: #6c5100;
-  --tag-text: #494c54;
-  --tag-border: #e1d5a5;
-  --film-bg: #fff6d3;
-  --film-border: #e0bc40;
-  --film-text: #725400;
-  --graphic-gold: #e9b523;
-  --frame-fill: #ffd336;
+  --pipeline-border: #bd9256;
+  --art-muted: #765020;
+  --tag-text: #655443;
+  --tag-border: #ddc8ac;
+  --film-bg: #f9edd9;
+  --film-border: #d0a264;
+  --film-text: #785426;
+  --graphic-gold: #c99140;
+  --frame-fill: #e8ad59;
   --frame-inset: 16px 0 30px 16px;
   --photo-filter: none;
   --heading-weight: 600;
-  --intro-color: #17202b;
-  --intro-wash: #ffe889;
+  --intro-color: #252322;
+  --intro-wash: #f5d7a9;
   --anchor-offset: 110px;
   background: var(--bg);
   color: var(--text);
@@ -57,30 +57,30 @@ html {
 }
 :root[data-theme="dark"] {
   --bg: #1a1a1a;
-  --panel: #212120;
-  --gold: #f4d03f;
-  --text: #f5f3ec;
-  --muted: #b0afa7;
-  --line: #3b3a33;
-  --button-bg: #f4d03f;
+  --panel: #25221f;
+  --gold: #efc482;
+  --text: #f7f1e7;
+  --muted: #b7ada3;
+  --line: #413a33;
+  --button-bg: #e8ad59;
   --button-shadow: none;
-  --link-border: #676354;
-  --art-bg: #23231f;
-  --art-dot: #484536;
-  --pipeline-bg: #282821;
-  --pipeline-border: #615a39;
-  --art-muted: #bdb89e;
-  --tag-text: #d0cdbd;
-  --tag-border: #4a473c;
-  --film-bg: #25251f;
-  --film-border: #504a31;
-  --film-text: #c3b983;
-  --graphic-gold: #f4d03f;
+  --link-border: #756350;
+  --art-bg: #2a2520;
+  --art-dot: #534534;
+  --pipeline-bg: #302920;
+  --pipeline-border: #756043;
+  --art-muted: #c7ad87;
+  --tag-text: #d3c5b4;
+  --tag-border: #5a4939;
+  --film-bg: #2a241e;
+  --film-border: #705839;
+  --film-text: #d6b78a;
+  --graphic-gold: #e8ad59;
   --frame-fill: transparent;
   --frame-inset: 15px 0 0 15px;
-  --photo-filter: grayscale(1);
+  --photo-filter: none;
   --heading-weight: 500;
-  --intro-color: #f4d03f;
+  --intro-color: #efc482;
   --intro-wash: transparent;
   color-scheme: dark;
 }
@@ -263,9 +263,9 @@ h1 {
   z-index: 1;
   display: block;
   width: 100%;
-  height: 345px;
+  height: 400px;
   object-fit: cover;
-  object-position: 50% 32%;
+  object-position: 50% 20%;
   filter: var(--photo-filter);
   border-radius: 2px;
 }
@@ -625,7 +625,7 @@ h3 {
     font-size: 18px;
   }
   .photo {
-    height: 300px;
+    height: 360px;
   }
   .project-copy {
     padding: 22px;
@@ -662,7 +662,7 @@ h3 {
     margin: 0 0 0 12px;
   }
   .photo {
-    height: 290px;
+    height: 360px;
   }
   .photo-label {
     left: -12px;

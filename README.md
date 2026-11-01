@@ -4,7 +4,7 @@ A static personal portfolio with a bright white and gold theme, a local portrait
 
 ## Themes
 
-The default theme uses clean white surfaces, dark ink text, a full-color portrait, and vivid yellow-gold details. Text links use a darker amber for readability. The “Dark mode” button switches to the original charcoal and gold palette and remembers the visitor's choice in their browser. The saved theme is applied before the page styles load to avoid a flash of the wrong theme.
+The default theme uses clean white surfaces with charcoal text, warm ivory panels, and bronze and amber accents matched to the portrait. The “Dark mode” button switches to a charcoal and warm gold palette and remembers the visitor's choice in their browser. The saved theme is applied before the page styles load to avoid a flash of the wrong theme.
 
 If JavaScript or browser storage is unavailable, all portfolio content and navigation still work. Without JavaScript, the page stays bright and the theme switch stays hidden. If only storage is blocked, the switch works for the current page.
 
@@ -20,7 +20,7 @@ Open http://127.0.0.1:8000 in your browser.
 
 ## Update content
 
-Edit `index.html` for text and links, and `styles.css` for appearance. The original portrait is `assets/profile_1.jpeg`. Google Fonts are optional; the page falls back to system sans-serif fonts when they are unavailable.
+Edit `index.html` for text and links, and `styles.css` for appearance. The current portrait is `assets/portrait.jpg`, optimized to 1200 × 1200 pixels for the web. Its crop is controlled by `.photo` in the stylesheet. Google Fonts are optional; the page falls back to system sans-serif fonts when they are unavailable.
 
 ## Replace the videography placeholder
 
